@@ -24,13 +24,17 @@ tar xjf $ZIP.tar.bz2 -C / #Needed for packaging.
 tar xjf $HG.tar.bz2
 
 #Move sources in place for packaging.
+## Bin directory.
 mkdir $PKG_NAME
 mkdir $PKG_NAME/bin
-mkdir $PKG_NAME/usr
+cp -r usr/bin/* $PKG_NAME/bin
+## Lib directory.
 mkdir $PKG_NAME/lib
-cp usr/bin/* $PKG_NAME/bin
-cp -r usr/share $PKG_NAME/usr
 cp -r usr/lib/* $PKG_NAME/lib
+## Include and Share directory.
+mkdir $PKG_NAME/usr
+###cp -r usr/include $PKG_NAME/usr
+cp -r usr/share $PKG_NAME/usr
 
 #Build package.
 cd $PKG_NAME
