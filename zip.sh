@@ -4,7 +4,7 @@
 set -e
 
 #Output name.
-PKG_NAME=zip
+PKG_NAME=Zip
 
 #Sources and dependency names.
 ZIP=zip-3.0-11
