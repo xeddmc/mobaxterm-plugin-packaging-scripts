@@ -8,10 +8,11 @@ with MobaXterm.
 * After that just run the following scripts from within MobaXterm to build the 
   corresponding plugins:
   *cgdb.sh
+  *cmake.sh
   *lua.sh
   *mercurial.sh -- This package needs my Python 2.7.x plugin package to work.
   *readline-devel.sh
   *zip.sh
   
 --
-Aaron Myles Landwehr (snap)
+Aaron Myles Landwehr <aron@udel.edu, snaphat@gmail.com>
