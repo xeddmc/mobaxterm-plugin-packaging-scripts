@@ -11,6 +11,7 @@ with MobaXterm.
   *cmake.sh
   *lua.sh
   *mercurial.sh -- This package needs my Python 2.7.x plugin package to work.
+  *python.sh
   *readline-devel.sh
   *zip.sh
   
