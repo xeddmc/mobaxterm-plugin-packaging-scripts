@@ -1,0 +1,66 @@
+Only in cgdb-0.6.7-mod: Makefile
+Only in cgdb-0.6.7-mod: cgdb/Makefile
+--- cgdb-0.6.7/cgdb/highlight_groups.c
++++ cgdb-0.6.7-mod/cgdb/highlight_groups.c
+@@ -98,7 +98,7 @@
+     {HLG_LINE_HIGHLIGHT, A_BOLD, A_BOLD, COLOR_BLACK, COLOR_GREEN},
+     {HLG_ENABLED_BREAKPOINT, A_BOLD, A_BOLD, COLOR_RED, COLOR_BLACK},
+     {HLG_DISABLED_BREAKPOINT, A_BOLD, A_BOLD, COLOR_YELLOW, COLOR_BLACK},
+-    {HLG_SELECTED_LINE_NUMBER, A_BOLD, A_BOLD, COLOR_WHITE, COLOR_BLACK},
++    {HLG_SELECTED_LINE_NUMBER, A_BOLD, A_BOLD, COLOR_BLUE, COLOR_BLACK},
+     {HLG_LOGO, A_BOLD, A_BOLD, COLOR_BLUE, COLOR_BLACK},
+     {HLG_LAST, A_NORMAL, A_NORMAL, -1, -1}
+ };
+@@ -121,7 +121,7 @@
+     {HLG_LINE_HIGHLIGHT, A_BOLD, A_BOLD, COLOR_BLACK, COLOR_GREEN},
+     {HLG_ENABLED_BREAKPOINT, A_BOLD, A_BOLD, COLOR_RED, -1},
+     {HLG_DISABLED_BREAKPOINT, A_BOLD, A_BOLD, COLOR_YELLOW, -1},
+-    {HLG_SELECTED_LINE_NUMBER, A_BOLD, A_BOLD, -1, -1},
++    {HLG_SELECTED_LINE_NUMBER, A_BOLD, A_BOLD, COLOR_BLUE, -1},
+     {HLG_LOGO, A_BOLD, A_BOLD, COLOR_BLUE, -1},
+     {HLG_LAST, A_NORMAL, A_NORMAL, -1, -1}
+ };
+Only in cgdb-0.6.7-mod: config.h
+Only in cgdb-0.6.7-mod: config.log
+Only in cgdb-0.6.7-mod: config.status
+--- cgdb-0.6.7/configure
++++ cgdb-0.6.7-mod/configure
+@@ -5376,13 +5376,13 @@
+ 
+ 
+ 
+-ac_fn_c_check_func "$LINENO" "putenv" "ac_cv_func_putenv"
+-if test "x$ac_cv_func_putenv" = xyes; then :
++#ac_fn_c_check_func "$LINENO" "putenv" #"ac_cv_func_putenv"
++#if test "x$ac_cv_func_putenv" = xyes; then :
++#
++#else
++#  as_fn_error $? "CGDB requires putenv to build." "$LINENO" 5
++#fi
+ 
+-else
+-  as_fn_error $? "CGDB requires putenv to build." "$LINENO" 5
+-fi
+-
+ ac_fn_c_check_func "$LINENO" "select" "ac_cv_func_select"
+ if test "x$ac_cv_func_select" = xyes; then :
+ 
+@@ -5390,12 +5390,12 @@
+   as_fn_error $? "CGDB requires select to build." "$LINENO" 5
+ fi
+ 
+-ac_fn_c_check_func "$LINENO" "strdup" "ac_cv_func_strdup"
+-if test "x$ac_cv_func_strdup" = xyes; then :
+-
+-else
+-  as_fn_error $? "CGDB requires strdup to build." "$LINENO" 5
+-fi
++#ac_fn_c_check_func "$LINENO" "strdup" "ac_cv_func_strdup"
++#if test "x$ac_cv_func_strdup" = xyes; then :
++#
++#else
++#  as_fn_error $? "CGDB requires strdup to build." "$LINENO" 5
++#fi
+ 
+ ac_fn_c_check_func "$LINENO" "strerror" "ac_cv_func_strerror"
+ if test "x$ac_cv_func_strerror" = xyes; then :

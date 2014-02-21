@@ -1,0 +1,14 @@
+This project contains simple scripts that will download dependencies, source 
+code, and binaries and use them to automatically build working plugins for use 
+with MobaXterm.
+
+* To use the included scripts you will need the development tools package from 
+  http://mobaxterm.mobatek.net/plugins.html to build packages.
+
+* After that just run the following scripts from within MobaXterm to build the 
+  corresponding plugins:
+  *CGDB.sh
+  *zip.sh
+  
+--
+Aaron Myles Landwehr (snap)
