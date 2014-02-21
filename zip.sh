@@ -22,7 +22,7 @@ tar xjf $ZIP.tar.bz2 -C / #Needed for packaging.
 tar xjf $ZIP.tar.bz2
 
 #Move sources in place for packaging.
-mkdir zip
+mkdir $PKG_NAME
 mkdir $PKG_NAME/bin
 mkdir $PKG_NAME/usr
 cp usr/bin/* $PKG_NAME/bin
