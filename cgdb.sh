@@ -1,4 +1,5 @@
 #!/bin/sh
+echo "Starting..."
 
 #Stop on error.
 set -e
@@ -21,6 +22,7 @@ mkdir .working_dir
 cd .working_dir
 
 #Grab sources and dependencies.
+echo "Grabbing sources..."
 wget ftp://mirrors.kernel.org/sourceware/cygwin/x86/release/zip/$ZIP.tar.bz2
 wget http://cgdb.me/files/$CGDB.tar.gz
 wget ftp://mirrors.kernel.org/sourceware/cygwin/x86/release/ncurses/libncurses9/$LNCURSES.tar.bz2
@@ -28,6 +30,7 @@ wget ftp://mirrors.kernel.org/sourceware/cygwin/x86/release/readline/libreadline
 wget ftp://mirrors.kernel.org/sourceware/cygwin/x86/release/readline/$READLINE_DEV.tar.bz2
 
 #Unzip.
+echo "Unzipping sources..."
 tar xjf $ZIP.tar.bz2 -C / #Needed for packaging.
 tar xzf $CGDB.tar.gz
 tar xjf $LNCURSES.tar.bz2
@@ -38,6 +41,7 @@ tar xjf $READLINE_DEV.tar.bz2
 cp -r ./usr/* /usr/
 
 #Patch and build.
+echo "Building CGDB..."
 cd $CGDB
 patch -p1 < ../../cgdb.patch
 ./configure
@@ -45,6 +49,7 @@ make
 make install
 
 #Move sources in place for packaging.
+echo "Creating package basis..."
 ## Bin directory.
 mkdir $PKG_NAME
 mkdir $PKG_NAME/bin
@@ -62,6 +67,7 @@ cp /usr/local/bin/* $PKG_NAME/bin
 cp -r /usr/local/share $PKG_NAME/usr
 
 #Build package.
+echo "Building package..."
 cd $PKG_NAME
 zip -r $PKG_NAME.mxt3 .
 mv $PKG_NAME.mxt3 ../../

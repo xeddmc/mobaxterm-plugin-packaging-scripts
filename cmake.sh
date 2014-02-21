@@ -1,4 +1,5 @@
 #!/bin/sh
+echo "Starting..."
 
 #Stop on error.
 set -e
@@ -20,6 +21,7 @@ mkdir .working_dir
 cd .working_dir
 
 #Grab sources and dependencies.
+echo "Grabbing sources..."
 wget ftp://mirrors.kernel.org/sourceware/cygwin/x86/release/zip/$ZIP.tar.bz2
 wget ftp://mirrors.kernel.org/sourceware/cygwin/x86/release/cmake/$CMAKE.tar.bz2
 wget ftp://mirrors.kernel.org/sourceware/cygwin/x86/release/libidn/libidn11/$LIDN.tar.bz2
@@ -27,6 +29,7 @@ wget ftp://mirrors.kernel.org/sourceware/cygwin/x86/release/ncurses/libncurses10
 wget ftp://mirrors.kernel.org/sourceware/cygwin/x86/release/gcc/libstdc++6/$LSTDCPP.tar.xz
 
 #Unzip.
+echo "Unzipping sources..."
 tar xjf $ZIP.tar.bz2 -C / #Needed for packaging.
 tar xjf $CMAKE.tar.bz2
 tar xjf $LIDN.tar.bz2
@@ -34,6 +37,7 @@ tar xjf $LNCURSES.tar.bz2
 tar xf $LSTDCPP.tar.xz
 
 #Move sources in place for packaging.
+echo "Creating package basis..."
 ## Bin directory.
 mkdir $PKG_NAME
 mkdir $PKG_NAME/bin
@@ -50,6 +54,7 @@ cp -r usr/share/$CMAKE_VER/Modules $PKG_NAME/bin
 cp -r usr/share/$CMAKE_VER/Templates $PKG_NAME/bin
 
 #Build package.
+echo "Building package..."
 cd $PKG_NAME
 zip -r $PKG_NAME.mxt3 .
 mv $PKG_NAME.mxt3 ../../
