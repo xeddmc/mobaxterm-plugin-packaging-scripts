@@ -47,6 +47,7 @@ patch -p1 < ../../cgdb.patch
 ./configure
 make
 make install
+cd ..
 
 #Move sources in place for packaging.
 echo "Creating package basis..."
