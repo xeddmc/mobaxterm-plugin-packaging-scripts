@@ -9,6 +9,7 @@ with MobaXterm.
   corresponding plugins:
   *cgdb.sh
   *cmake.sh
+  *graphviz.sh
   *lua.sh
   *mercurial.sh -- This package needs my Python 2.7.x plugin package to work.
   *python.sh
