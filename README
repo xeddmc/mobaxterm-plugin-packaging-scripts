@@ -12,6 +12,7 @@ with MobaXterm.
   *graphviz.sh
   *lua.sh
   *mercurial.sh -- This package needs my Python 2.7.x plugin package to work.
+  *ninvaders.sh
   *python.sh
   *readline-devel.sh
   *zip.sh
